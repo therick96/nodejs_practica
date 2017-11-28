@@ -13,3 +13,7 @@ function miPeticion(req, res){
 }
 
 var server = http.createServer(miPeticion).listen("3000");
+
+var arreglos = require("./exportar");
+console.log(arreglos.variable1);
+console.log(arreglos.variable2);
