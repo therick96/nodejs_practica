@@ -4,7 +4,8 @@
     "author": "Erick Gomez",
     "version": "0.0.1",
     "dependencies": {
-        "express": "^4.16.2"
+        "express": "^4.16.2",
+        "swig": "^1.4.2"
     },
     "devDependencies": {}
 }
