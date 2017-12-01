@@ -5,6 +5,10 @@ var express = require('express'),
     cookieParser = require('cookie-parser'); // Parseador de cookies
 var server = express();
 
+swig.setDefaults({
+    cache : false
+});
+
 //Express
 server.use(cookieParser());
 server.use(session({secret : 'mi clave'})); //Para configurar una sesion es necesario configurar primero las cookies
