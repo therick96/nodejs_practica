@@ -6,6 +6,8 @@ server.engine('html', swig.renderFile); //El servidor de express, el motor Rende
 server.set('view engine', 'html'); //El servidor tendra un motor de vista html
 server.set('views', __dirname + '/app/views'); //Lugar donde se alojaran los archivos html, __dirname: devuelve direccion de la ruta del proyecto
 
+server.use(express.static('./public'));
+
 require('./app/controllers/home')(server);
 
 server.listen(8000)
