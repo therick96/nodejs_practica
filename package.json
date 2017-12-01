@@ -3,8 +3,13 @@
     "description": "Paquete de prueba",
     "author": "Erick Gomez",
     "version": "0.0.1",
+    "main": "server.js",
     "dependencies": {
+        "cookie-parser": "^1.4.3",
         "express": "^4.16.2",
+        "express-session": "^1.15.6",
+        "passport": "^0.4.0",
+        "passport-facebook": "^2.1.1",
         "swig": "^1.4.2"
     },
     "devDependencies": {}
