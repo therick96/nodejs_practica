@@ -1,4 +1,19 @@
 {% extends '../base.html' %}
 {% block content %}
-    <h1>Hola Mundo</h1>
+    <h2>Hola Mundo</h1>
+    <table>
+        <tr>
+            <td>
+                <img src="{{ foto }}">
+            </td>
+            <td>
+                {{ usuario }}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                {{ otros }}
+            </td>
+        </tr>
+    </table>
 {% endblock %}
