@@ -21,7 +21,7 @@ passport.serializeUser(function (user, done){ // Para serealizar usuario
     done(null, user); //se guarda en req.user
 }); 
 
-passport.serializeUser(function (user, done){ // Para deserealizar usuario
+passport.deserializeUser(function (user, done){ // Para deserealizar usuario
     done(null, user);
 }); 
 
