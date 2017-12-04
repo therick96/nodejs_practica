@@ -34,6 +34,7 @@ server.use(express.static('./public'));
 
 //Controllers:
 require('./app/controllers/home')(server);
+require('./app/controllers/user')(server);
 //Conecctions
 require('./app/connections/facebook')(server);
 

@@ -28,7 +28,11 @@
                     <a href="#">Dashboard</a>
                 </li>
                 <li>
-                    <a href="/auth/facebook">FB Login</a>
+                    {% if not usuario %}
+                        <a href="/auth/facebook">FB Login</a>
+                    {% else %}
+                        <a href="/logout">Logout</a>
+                    {% endif %}
                 </li>
                 <li>
                     <a href="#">Overview</a>
@@ -52,11 +56,25 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <h1>Pagina de Prueba</h1>
-                {% block content %}
+                {% if usuario %}
+                    <table>
+                        <tr>
+                            <td>
+                                <h1>{{ usuario }}</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>{{ correo }}</h2>
+                            </td>
+                        </tr>
+                    </table>
+                {% else %}
+                    <h1>Pagina de Prueba</h1>
+                {% endif %}
+
                     <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
                     <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                {% endblock %}
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
             </div>
         </div>
