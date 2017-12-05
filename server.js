@@ -2,7 +2,8 @@ var express = require('express'),
     swig = require('swig'),
     passport = require('passport'),
     session = require('express-session'),
-    cookieParser = require('cookie-parser'); // Parseador de cookies
+    cookieParser = require('cookie-parser'), // Parseador de cookies
+    body_parser = require('body-parser'); //Parseador de body (Para POST)
 var server = express();
 
 swig.setDefaults({
@@ -10,6 +11,10 @@ swig.setDefaults({
 });
 
 //Express
+server.use(body_parser.urlencoded({
+    extended : true
+})); //Conf del body parser...
+server.use(body_parser.json()); //...Para que no salga deprecated
 server.use(cookieParser());
 server.use(session({secret : 'mi clave'})); //Para configurar una sesion es necesario configurar primero las cookies
 
