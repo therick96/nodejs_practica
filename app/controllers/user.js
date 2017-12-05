@@ -1,3 +1,5 @@
+var users = require('../models/users'); //Guardo la configuracion de la base de mongoose
+
 var user_controler = function(server){
     server.route("/logout") //Define una ruta
         .get(function(req, res){
@@ -9,8 +11,22 @@ var user_controler = function(server){
             res.render('user/formulario_1', {usuario : req.user._json.name});
         })
         .post(function(req, res){
-            console.log("POST");
-            console.log(req.body);
+            console.log(req.user);
+            var usuario = new users({
+                id_network : req.user.id,
+                username : req.body.usuario,
+                email : req.body.correo,
+                tlf : req.body.numero,
+                nombre : req.body.nombre,
+                apellido : req.body.apellido
+            }); // Se crea una instancia de datos
+            usuario.save(function(error){
+                if (error){
+                    console.log(error);
+                    return;
+                }
+            });
+            res.redirect('/');
         });
 };
 

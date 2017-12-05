@@ -1,5 +1,5 @@
 var mongoose = require('../connections/mongoose');
-var esquema = mongoose.schema;
+var esquema = mongoose.Schema;
 
 var esquemaUsuario = new esquema({
     id_network : {type : String},
