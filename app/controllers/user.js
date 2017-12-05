@@ -8,7 +8,15 @@ var user_controler = function(server){
         })
     server.route("/formulario_1")
         .get(function(req, res){
-            res.render('user/formulario_1', {usuario : req.user._json.name});
+            users.findOne({
+                id_network : req.user.id
+            }, function(error, usr){
+                if (usr){
+                    res.redirect('/');
+                }else if (error){
+                    res.render('user/formulario_1', {usuario : req.user._json.name});
+                }
+            }); // Averiguar si el usuario ya esta registrado
         })
         .post(function(req, res){
             console.log(req.user);
