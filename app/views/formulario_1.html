@@ -24,12 +24,12 @@
                     {% if not usuario %}
                         <a href="/">Inicio</a>
                     {% else %}
-                        {{ usuario }}
+                        {{ foto }} {{ usuario }}
                     {% endif %}
                 </li>
                 {% if usuario %}
                     <li>
-                        <a href="/formulario_1?user={{usuario}}" user="{{usuario}}">Dashboard</a>
+                        <a href="/formulario_1">Dashboard</a>
                     </li>
                     <li>
                         <a href="/logout">Logout</a>
@@ -64,20 +64,12 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                {% if usuario %}
-                    <table>
-                        <tr>
-                            <td>
-                                <h1>{{ usuario }}</h1>
-                            </td>
-                        </tr>
-                    </table>
-                {% else %}
-                    <h1>Pagina de Prueba</h1>
-                {% endif %}
-
-                    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                <form method="POST" action="guardado">
+                    Nombre: <input type="text" name="nombre" value="{{ usuario }}"/>
+                    Correo: <input type="text" name="correo" value=""/>
+                    Tlf: <input type="text" name="numero" value=""/>
+                    <input type="submit" name="enviar" value="Guardar"/>
+                </form>
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
             </div>
         </div>
