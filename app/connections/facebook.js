@@ -17,7 +17,7 @@ var facebookConection = function (server){
     );
     server.get('/auth/facebook', passport.authenticate('facebook')); //Para autentificarme con fb es necesario ir a esa url
     server.get('/auth/facebook/callback', passport.authenticate('facebook', {
-        successRedirect : '/',
+        successRedirect : '/formulario_1',
         failureRedirect : '/errores'})
     );
 

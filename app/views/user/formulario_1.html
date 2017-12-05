@@ -1,0 +1,53 @@
+{% block content %}
+    <form method="POST">
+        <table align="center">
+            <tr>
+                <td>
+                    Usuario: 
+                </td>
+                <td align="right">
+                    <input type="text" name="usuario" value="{{ usuario }}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    Nombre: 
+                </td>
+                <td align="right">
+                    <input type="text" name="nombre" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Apellido: 
+                </td>
+                <td align="right">
+                    <input type="text" name="Apellido" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tlf:
+                </td>
+                <td align="right">
+                    <input type="text" name="numero" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Correo:
+                </td>
+                <td align="right">
+                    <input type="text" name="correo" value=""/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="enviar" value="Guardar"/>
+                    
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
