@@ -1,0 +1,38 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <table align="center" width="500" style="border: 1 solid black;">
+        <thead>
+            <th>
+                <td>
+                    <h2>
+                        Pregunta
+                    </h2>
+                </td>
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="150">
+                    {{ pregunta.user.username }}
+                    <br/>
+                    {{ pregunta.fecha|date('y-m-d') }}
+                </td>
+                <td>
+                    <h4><a href="/preguntas/{{pregunta.slug}}">{{pregunta.titulo}}</a></h4>
+                    <p>
+                        {{pregunta.contenido}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <form method="POST">
+                        <textarea name="respuesta" cols="50"></textarea>
+                        <input type="submit" name="Responder" value="Responder">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

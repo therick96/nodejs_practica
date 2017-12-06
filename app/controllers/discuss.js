@@ -23,6 +23,17 @@ var discussController = function (server) {
                 res.redirect("/");
             }
         });
+
+    server.route('/preguntas/:slug')
+        .get(function(req, res){
+            preguntas.findOne({
+                slug : req.params.slug
+            }).populate('user').exec(function(error, pregunta){
+                res.render('discusion/detalle_pregunta', {pregunta : pregunta});
+            })
+        }).post(logged, getUser, function(error, respuesta){
+            
+        });
 };
 
 module.exports = discussController;
