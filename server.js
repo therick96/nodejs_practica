@@ -40,7 +40,7 @@ server.use(express.static('./public'));
 //Controllers:
 require('./app/controllers/home')(server);
 require('./app/controllers/user')(server);
-//require('./app/controllers/form')(server);
+require('./app/controllers/discuss')(server);
 //Conecctions
 require('./app/connections/facebook')(server);
 

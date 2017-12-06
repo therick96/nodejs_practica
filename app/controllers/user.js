@@ -36,6 +36,15 @@ var user_controler = function(server){
             });
             res.redirect('/');
         });
+
+    server.route("/contact_me")
+        .get(function(req,res){
+            if (req.user){
+                res.render("./contact_me", {usuario : req.user._json.name});
+            }else{
+                res.redirect("/auth/facebook");
+            }
+        });
 };
 
 module.exports = user_controler;
