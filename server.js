@@ -1,10 +1,13 @@
 var express = require('express'),
+    http = require('http'),
     swig = require('swig'),
     passport = require('passport'),
     session = require('express-session'),
     cookieParser = require('cookie-parser'), // Parseador de cookies
     body_parser = require('body-parser'); //Parseador de body (Para POST)
 var server = express();
+var server_sockets = http.createServer(server).listen(8000);
+var io = require('socket.io').listen(server_sockets);
 
 swig.setDefaults({
     cache : false
@@ -44,4 +47,4 @@ require('./app/controllers/discuss')(server);
 //Conecctions
 require('./app/connections/facebook')(server);
 
-server.listen(8000)
+//server.listen(8000)
