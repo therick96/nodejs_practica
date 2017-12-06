@@ -1,9 +1,10 @@
 var preguntas = require("../models/preguntas");
 var usuario = require("../models/users");
+var logged = require("../middlewares/logged");
 
 var discussController = function (server) {
     server.route('/guardar_pregunta')
-        .post(function(req, res){
+        .post(logged, function(req, res){
             usuario.findOne({
                 id_network : req.user.id,
 

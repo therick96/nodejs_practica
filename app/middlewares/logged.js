@@ -1,9 +1,9 @@
 
 var loggedMidleware = function (req, res, next) {
     if (req.user){
-        next();
+        next(); //en caso de que este loggeado, continua con la siguiente funcion
     }else{
-        res.redirect('/log-in');
+        res.redirect('/auth/facebook'); //si no, redirige
     }
 };
 

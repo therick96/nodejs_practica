@@ -42,7 +42,7 @@ var user_controler = function(server){
             if (req.user){
                 res.render("./contact_me", {usuario : req.user._json.name});
             }else{
-                res.redirect("/auth/facebook");
+                res.render("./contact_me");
             }
         });
 };
