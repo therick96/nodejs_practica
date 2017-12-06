@@ -81,6 +81,36 @@
                         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
                 {% endblock %}
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+            {% if preguntas %}
+                <table>
+                    <thead>
+                        <th>
+                            <td>
+                                <h2>
+                                    Preguntas
+                                </h2>
+                            </td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        {% for pregunta in preguntas %}
+                            <tr>
+                                <td>
+                                    {{ pregunta.user.username }}
+                                    <br/>
+                                    {{ pregunta.fecha|date('y-m-d') }}
+                                </td>
+                                <td>
+                                    <h4>{{pregunta.titulo}}</h4>
+                                    <p>
+                                        {{pregunta.contenido}}
+                                    </p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
             </div>
         </div>
         <!-- /#page-content-wrapper -->

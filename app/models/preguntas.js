@@ -5,7 +5,8 @@ var esquemaPreguntas = new esquema({
     user : {type  : esquema.Types.ObjectId, ref : 'user'},
     titulo : {type : String},
     contenido : {type : String},
-    slug : {type : String}
+    slug : {type : String},
+    fecha : {type : Date, default : Date.now}
 });
 
 var preguntas = mongoose.model('question', esquemaPreguntas);
