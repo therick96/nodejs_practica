@@ -7,7 +7,7 @@ var usuario = require("../models/users"),
 
 var discussController = function (server, io) {
     io.on('connection', function(socket){ // Escucha el evento io() disparado en el index
-        console.log("Un usuario se conectó");
+        socket.join("room"); //Creacion de cuarto
     });
     server.route('/guardar_pregunta')
         .post(logged, getUser, function(req, res){
@@ -23,6 +23,11 @@ var discussController = function (server, io) {
                         console.log(error);
                         return
                     }
+                    io.to("room").emit('preguntando', {
+                        username : req.user.username,
+                        contenido : req.body.contenido,
+                        fecha : pregunta.fecha
+                    });
                 });
                 res.redirect("/");
             }
