@@ -82,7 +82,7 @@
                 {% endblock %}
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
             {% if preguntas %}
-                <table>
+                <table align="center" width="500" style="border: 1 solid black;">
                     <thead>
                         <th>
                             <td>
@@ -95,13 +95,13 @@
                     <tbody>
                         {% for pregunta in preguntas %}
                             <tr>
-                                <td>
+                                <td width="150">
                                     {{ pregunta.user.username }}
                                     <br/>
                                     {{ pregunta.fecha|date('y-m-d') }}
                                 </td>
                                 <td>
-                                    <h4>{{pregunta.titulo}}</h4>
+                                    <h4><a href="/{{pregunta.slug}}">{{pregunta.titulo}}</a></h4>
                                     <p>
                                         {{pregunta.contenido}}
                                     </p>
