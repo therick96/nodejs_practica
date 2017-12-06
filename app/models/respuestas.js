@@ -7,3 +7,7 @@ var esquemaRespuesta = new esquema({
     contenido : {type : String},
     fecha : {type : Date, default : Date.now}
 });
+
+var respuesta = mongoose.model('answer', esquemaRespuesta);
+
+module.exports = respuesta;
