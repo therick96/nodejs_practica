@@ -9,7 +9,7 @@ var homeController = function (server){
                 .sort('-fecha').populate("user") //Sort para ordenar por fecha, populate para traer todos los datos de user
                 .exec(function(error, pregunta){
                     //res.send('Hola Mundo');
-                    console.log(pregunta);
+                    //console.log(pregunta);
                     if (req.user){//Si se logueo
                         if (req.user.provider == "facebook"){
                             var nombre = req.user._json.name; //Trae el nombre

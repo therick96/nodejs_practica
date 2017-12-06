@@ -33,6 +33,20 @@
                     </form>
                 </td>
             </tr>
+            {% for resp in respuestas%}
+                <tr>
+                    <td width="150">
+                        {{ resp.user.username }}
+                        <br/>
+                        {{ resp.fecha|date('y-m-d') }}
+                    </td>
+                    <td>
+                        <p>
+                            {{resp.contenido}}
+                        </p>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

@@ -1,5 +1,5 @@
 var mongoose = require('../connections/mongoose'),
-    esquema = mongoose.Scheme;
+    esquema = mongoose.Schema;
 
 var esquemaRespuesta = new esquema({
     pregunta : {type : esquema.Types.ObjectId, ref : 'questions'},
