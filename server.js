@@ -43,7 +43,7 @@ server.use(express.static('./public'));
 //Controllers:
 require('./app/controllers/home')(server);
 require('./app/controllers/user')(server);
-require('./app/controllers/discuss')(server);
+require('./app/controllers/discuss')(server, io);
 //Conecctions
 require('./app/connections/facebook')(server);
 

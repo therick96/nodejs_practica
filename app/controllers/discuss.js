@@ -5,7 +5,10 @@ var usuario = require("../models/users"),
     getUser = require("../middlewares/getuser"),
     slugs = require("slugs");
 
-var discussController = function (server) {
+var discussController = function (server, io) {
+    io.on('connection', function(socket){ // Escucha el evento io() disparado en el index
+        console.log("Un usuario se conectó");
+    });
     server.route('/guardar_pregunta')
         .post(logged, getUser, function(req, res){
             if (usuario){
