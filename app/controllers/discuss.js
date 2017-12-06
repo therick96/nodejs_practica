@@ -1,7 +1,8 @@
 var preguntas = require("../models/preguntas");
 var usuario = require("../models/users"),
     logged = require("../middlewares/logged"),
-    getUser = require("../middlewares/getuser");
+    getUser = require("../middlewares/getuser"),
+    slugs = require("slugs");
 
 var discussController = function (server) {
     server.route('/guardar_pregunta')
@@ -10,7 +11,8 @@ var discussController = function (server) {
                 var pregunta = new preguntas({
                     user : req.user,
                     titulo : req.body.titulo,
-                    contenido : req.body.contenido
+                    contenido : req.body.contenido,
+                    slug : slugs(req.body.titulo)
                 });
                 pregunta.save(function(error){
                     if (error){

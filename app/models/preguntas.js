@@ -4,7 +4,8 @@ var esquema = mongoose.Schema;
 var esquemaPreguntas = new esquema({
     user : {type  : esquema.Types.ObjectId, ref : 'user'},
     titulo : {type : String},
-    contenido : {type : String}
+    contenido : {type : String},
+    slug : {type : String}
 });
 
 var preguntas = mongoose.model('question', esquemaPreguntas);
