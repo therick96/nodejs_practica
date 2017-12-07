@@ -6,6 +6,8 @@
     var socket = io(); //Envio de evento de usuario entrando
     socket.on('preguntando', function (data) {
         console.log(data);
+        var html = '<tr><td width="150">'+ data.username + '<br/>' + data.fecha + '</td><td><h4><a href="/preguntas/' + data.slug + '">' + data.titulo + '</a></h4><p>' + data.contenido + '</p></td></tr>';
+        $('#question').prepend(html);
     });
 </script>
 {% endblock %}

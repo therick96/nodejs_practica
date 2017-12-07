@@ -26,7 +26,9 @@ var discussController = function (server, io) {
                     io.to("room").emit('preguntando', {
                         username : req.user.username,
                         contenido : req.body.contenido,
-                        fecha : pregunta.fecha
+                        titulo : req.body.titulo,
+                        fecha : pregunta.fecha,
+                        slug : pregunta.slug
                     });
                 });
                 res.redirect("/");

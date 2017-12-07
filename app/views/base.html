@@ -92,7 +92,7 @@
                             </td>
                         </th>
                     </thead>
-                    <tbody>
+                    <tbody id="question">
                         {% for pregunta in preguntas %}
                             <tr>
                                 <td width="150">
@@ -119,6 +119,8 @@
     <!-- /#wrapper -->
 
     <!-- Bootstrap core JavaScript-->
+    {% block scripts %}
+    {% endblock %}
     <script src="/jquery/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script >
 
@@ -129,8 +131,6 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-    {% block scripts %}
-    {% endblock %}
 
 </body>
 
